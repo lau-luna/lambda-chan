@@ -1,0 +1,154 @@
+:root {
+  --dark: #141414;
+  --violet: #b6a2f5;
+  --violet-dark: #68608e;
+  --pink: #EB82DC;
+  --num: #ac7ff5;
+  --green: #77c330;
+  --fuchsia: #db286b;
+  --light-blue: #5abdd0;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("/fonts/Ubuntu-R.ttf") format("ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("/fonts/Ubuntu-B.ttf") format("tff");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Ubuntu Mono";
+  src: url("/fonts/UbuntuMono-R.ttf") format("ttf");
+  font-weight: 400;
+}
+
+.green {
+  color: var(--green);
+}
+
+.fuchsia {
+  color: var(--fuchsia);
+}
+
+.light-blue {
+  color: var(--light-blue);
+}
+
+hr {
+  color: var(--violet-dark);
+}
+
+body {
+  background-color: var(--dark);
+  color: white;
+  font-family: "Ubuntu-R", sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header h1 {
+  font-size: 3rem;
+}
+
+h1 {
+  color: var(--violet);
+  font-family: "Ubuntu-B", sans-serif;
+}
+
+code, pre, .mono {
+  font-family: "UbuntuMono-R", monospace;
+}
+
+.container {
+  margin-top: 2rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.reisen-boards {
+  display: grid;
+  grid-template-columns: 25% 1fr;
+  gap: 5rem;
+}
+
+.reisen-boards img {
+  width: 100%;
+}
+
+.boards-container {
+  display: block;
+  margin-top: 4rem;
+}
+
+.solid-header {
+  padding: 0.5%;
+  background-color: var(--violet-dark);
+  color: white;
+}
+
+.solid-header h2 {
+  margin: 0;
+  padding-left: 1%;
+}
+
+.board-box-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 1rem;
+  padding: 0%;
+  margin-top: 2rem;
+}
+
+.footer-box-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board-box {
+  border: 1px solid var(--violet-dark);
+  padding: 1.5rem;
+}
+
+.footer-box {
+  border: 1px solid var(--violet-dark);
+  padding: 0.5rem;
+}
+
+.board-box h2 {
+  color: var(--violet);
+  margin: 0;
+  margin-bottom: 5%;
+}
+
+.board-box a, .footer-box-container a {
+  color: var(--pink);
+  font-size: 0.9rem;
+}
+
+.board-list a {
+  display: block;
+  text-decoration: none;
+}
+
+.board-list a:hover {
+  text-decoration: underline;
+}
+
+footer hr {
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+.main-container {
+  border: 1px solid var(--violet--dark);
+}

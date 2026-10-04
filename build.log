@@ -1,0 +1,19 @@
+lambda-chan> build (exe) with ghc-9.10.3
+Preprocessing executable 'lambda-chan' for lambda-chan-0.1.0.0...
+Building executable 'lambda-chan' for lambda-chan-0.1.0.0...
+[1 of 1] Compiling Main
+/home/lau/Projects/side_projects/lambda-chan/src/Main.hs:18:1: error: [GHC-58481] parse error on input ‘module’
+   |
+18 | module Main (main) where
+   | ^^^^^^
+
+
+Error: [S-7282]
+       Stack failed to execute the build plan.
+       
+       While executing the build plan, Stack encountered the error:
+       
+       [S-7011]
+       While building package lambda-chan-0.1.0.0 (scroll up to its section to see the error) using:
+       /home/lau/.stack/setup-exe-cache/x86_64-linux/Cabal-simple_w2MFVN35_3.12.1.0_ghc-9.10.3 --verbose=1 --builddir=.stack-work/dist/x86_64-linux/ghc-9.10.3 build exe:lambda-chan --ghc-options ""
+       Process exited with code: ExitFailure 1 

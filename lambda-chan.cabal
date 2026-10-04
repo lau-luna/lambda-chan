@@ -1,0 +1,46 @@
+cabal-version:       2.2
+
+name:                lambda-chan
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/githubuser/lambda-chan#readme
+license:             BSD-3-Clause
+license-file:        LICENSE
+author:              Author name here
+maintainer:          example@example.com
+copyright:           2026 Author name here
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+                     CHANGELOG.md
+
+executable lambda-chan
+  hs-source-dirs:      src
+  main-is:             Main.hs
+  other-modules:       Domain.Attachment
+                     , Domain.Board
+                     , Domain.Post
+                     , Domain.Thread
+                     , Views.Layout
+                     , Mock.Data
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5
+                     , scotty
+                     , time
+                     , text
+                     , blaze-html
+                     , wai-middleware-static
+  ghc-options:         -Wall
+                       -Wcompat
+                       -Widentities
+                       -Wincomplete-record-updates
+                       -Wincomplete-uni-patterns
+                       -Wmissing-export-lists
+                       -Wmissing-home-modules
+                       -Wpartial-fields
+                       -Wredundant-constraints
+
+source-repository head
+  type:     git
+  location: https://github.com/githubuser/lambda-chan
