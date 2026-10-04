@@ -18,8 +18,10 @@ extra-source-files:  README.md
 executable lambda-chan
   hs-source-dirs:      src
   main-is:             Main.hs
-  other-modules:       Domain.Attachment
+  other-modules:       Controllers.BoardController
+                     , Domain.Attachment
                      , Domain.Board
+                     , Domain.Boards
                      , Domain.Post
                      , Domain.Thread
                      , Views.Layout

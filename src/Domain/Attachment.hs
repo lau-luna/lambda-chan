@@ -1,5 +1,8 @@
 module Domain.Attachment 
   ( Attachment(..)
+  , Image(..)
+  , Video(..)
+  , Gif(..)
   ) where
 
 import Data.Text (Text)

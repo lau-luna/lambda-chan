@@ -5,45 +5,32 @@ module Views.Layout
     indexTemplate
   ) where
 
-
+import Data.Text (Text, toLower)
+import Control.Monad (forM_)
 import Text.Blaze.Html5 as H
 import Text.Blaze.Html5.Attributes as A
 import Prelude hiding (head, id, div)
 
-boardsGeneral :: Html
-boardsGeneral =
-  H.div ! class_ "board-list mono" $ do
-    H.a ! href "/b" $ "/b/ Random"
-    H.a ! href "/hu" $ "/hu/ Humanity"
-    H.a ! href "/wv)" $ "/wv/ Worksafe Videos"
+import Domain.Board
+import Domain.Boards (allBoards)
 
-boardsInterests :: Html
-boardsInterests =
-  H.div ! class_ "board-list mono" $ do
-    H.a ! href "" $ "/a/ Anime & Manga"
-    H.a ! href "" $ "/v/ Videogames"
-    H.a ! href "" $ "/i/ Other Interests"
 
-boardsTech :: Html
-boardsTech =
+renderBoardList :: [Board] -> Html
+renderBoardList boards =
   H.div ! class_ "board-list mono" $ do
-    H.a ! href "" $ "/t/ Tech General"
-    H.a ! href "" $ "/l/ Linux"
-    H.a ! href "" $ "/c/ Computer Science"
-    H.a ! href "" $ "/p/ Programming"
-    H.a ! href "" $ "/fp/ Functional Programming"
+    forM_ boards $ \board -> do 
+      H.a ! href (toValue ("/" <> boardAcronym board)) $ toHtml (renderBoardName board)
 
-boardsNSFW :: Html
-boardsNSFW =
-  H.div ! class_ "board-list mono" $ do
-    H.a $ "/h/ Hentai"
 
-footerElems :: Html
-footerElems = 
+
+footerElems :: [Text]
+footerElems = ["Rules", "Contact"]
+
+renderFooterElems :: [Text] -> Html
+renderFooterElems elems = 
   H.div ! class_ "footer-box-container mono" $ do
-    H.a ! class_ "footer-box" $ "Rules"
-    H.a ! class_ "footer-box" $ "Contact"
-
+    forM_ elems $ \e -> do
+      H.a ! class_ "footer-box" ! href (toValue (toLower e)) $ toHtml e
 
 
 indexTemplate :: Html
@@ -74,16 +61,16 @@ indexTemplate = docTypeHtml $ do
             div ! class_ "board-box-container" $ do
                div ! class_ "board-box" ! id "boards-general" $ do
                  h2 "General"
-                 boardsGeneral
+                 renderBoardList $ boardsByCategory General allBoards
                div ! class_ "board-box" ! id "boards-tech" $ do
                  h2 "Technology"
-                 boardsTech
+                 renderBoardList $ boardsByCategory Tech allBoards
                div ! class_ "board-box" ! id "boards-interests" $ do
                  h2 "Interests"
-                 boardsInterests
+                 renderBoardList $ boardsByCategory Interests allBoards
                div ! class_ "board-box" ! id "boards-nsfw" $ do
                  h2 "NSFW"
-                 boardsNSFW
+                 renderBoardList $ boardsByCategory NSFW allBoards
       div ! class_ "main-container" $ do
         div ! class_ "solid-header mono" $ do
           h2 "popularThreads :: [Thread]"
@@ -94,4 +81,4 @@ indexTemplate = docTypeHtml $ do
         div ! class_ "solid-header mono" $ do
           h2 "stats :: [(String, Int)]"
         hr
-        footerElems
+        renderFooterElems footerElems
