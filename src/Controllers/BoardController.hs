@@ -1,4 +1,0 @@
-module Controllers.BoardController
-  (
-
-  ) where

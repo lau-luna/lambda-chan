@@ -5,10 +5,12 @@ module Domain.Board
   , BoardCategory(..)
   , boardsByCategory
   , renderBoardName
+  , boardNameFor
   ) where
 
 import Domain.Thread
 import Data.Text (Text)
+import Data.List (find)
 
 data BoardCategory
   = General
@@ -30,3 +32,9 @@ boardsByCategory cat bs = filter (\b -> boardCategory b == cat) bs
 
 renderBoardName :: Board -> Text
 renderBoardName b = "/" <> boardAcronym b <> "/ " <> boardName b
+
+findBoard :: Int -> [Board] -> Maybe Board
+findBoard bid = find (\b -> boardId b == bid)
+
+boardNameFor :: Int -> [Board] -> Maybe Text 
+boardNameFor bid boards = boardName <$> findBoard bid boards

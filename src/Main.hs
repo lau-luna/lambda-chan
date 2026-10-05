@@ -1,21 +1,20 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-
 module Main (main) where
 
 import Web.Scotty
 import Network.Wai.Middleware.Static
-import Text.Blaze.Html.Renderer.Text (renderHtml)
 
-import Data.Monoid (mconcat)
-import Data.Time (getCurrentTime, UTCTime)
-import Data.Text (Text)
+import Data.List (stripPrefix)
 
-import Views.Layout (indexTemplate)
+import qualified Controllers.Index as Index
 
 main :: IO ()
 main = scotty 3000 $ do
   middleware (staticPolicy (noDots >-> addBase "static"))
+  middleware (staticPolicy (policy stripUploads >-> addBase "uploads"))
 
-  get "/" $ do
-    html $ renderHtml indexTemplate
+  get "/" Index.show
+
+stripUploads :: String -> Maybe String
+stripUploads path = stripPrefix "uploads/" path

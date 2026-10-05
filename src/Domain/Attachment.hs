@@ -3,6 +3,7 @@ module Domain.Attachment
   , Image(..)
   , Video(..)
   , Gif(..)
+  , attachmentPath
   ) where
 
 import Data.Text (Text)
@@ -25,3 +26,8 @@ data Gif = Gif
   { gifPath :: Text
   }
 
+attachmentPath :: Attachment -> Maybe Text
+attachmentPath NoAttachment  = Nothing
+attachmentPath (ImageFile i) = Just $ imagePath i
+attachmentPath (VideoFile i) = Just $ videoPath i
+attachmentPath (GifFile i)   = Just $ gifPath i
