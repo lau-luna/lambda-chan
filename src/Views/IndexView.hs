@@ -13,8 +13,6 @@ import Prelude hiding (head, id, div)
 
 import Domain.Board
 import Domain.Thread
-import Domain.Attachment (attachmentPath)
-
 
 renderBoardList :: [Board] -> Html
 renderBoardList boards =
@@ -22,17 +20,15 @@ renderBoardList boards =
     forM_ boards $ \board -> do 
       H.a ! href (toValue ("/" <> boardAcronym board)) $ toHtml (renderBoardName board)
 
-renderThreadPreview :: (Thread, Maybe Text) -> Html
+renderThreadPreview :: (Thread, Maybe Board) -> Html
 renderThreadPreview (t, Nothing) = do
   h3 . toHtml $ threadTitle t
-renderThreadPreview (t, Just bName) = do
+renderThreadPreview (t, Just board) = do
   div ! class_ "thread-preview" $ do
-    h3 ! class_ "" $ toHtml bName
-    case attachmentPath (threadAttachment t) of
-      Just path -> img ! src (toValue path)
-      Nothing -> img ! src mempty
-    h3 ! class_ "" $ toHtml (collapsedThreadTitle t)
-    p ! class_ "" $ toHtml (collapsedThreadText t)
+    a ! href (toValue (boardPath board)) ! class_ "board-name mono" $ toHtml (boardName board)
+    img ! src (toValue (threadAttachmentPath t))
+    h3 ! class_ "thread-title" $ toHtml (collapsedThreadTitle t)
+    p ! class_ "thread-text" $ toHtml (collapsedThreadText t)
 
 
 footerElems :: [Text]
@@ -45,7 +41,7 @@ renderFooterElems elems =
       H.a ! class_ "footer-box" ! href (toValue (toLower e)) $ toHtml e
 
 
-indexTemplate :: [Board] -> [Board] -> [Board] -> [Board] -> [(Thread, Maybe Text)] -> Html
+indexTemplate :: [Board] -> [Board] -> [Board] -> [Board] -> [(Thread, Maybe Board)] -> Html
 indexTemplate general tech interests nsfw popularThreads = docTypeHtml $ do
   H.head $ do
     H.meta ! A.charset "utf-8"

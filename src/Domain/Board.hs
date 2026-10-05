@@ -5,6 +5,8 @@ module Domain.Board
   , BoardCategory(..)
   , boardsByCategory
   , renderBoardName
+  , boardPath
+  , findBoard
   , boardNameFor
   ) where
 
@@ -29,6 +31,9 @@ data Board = Board
 
 boardsByCategory :: BoardCategory -> [Board] -> [Board] 
 boardsByCategory cat bs = filter (\b -> boardCategory b == cat) bs
+
+boardPath :: Board -> Text
+boardPath b = "/" <> boardAcronym b <> "/"
 
 renderBoardName :: Board -> Text
 renderBoardName b = "/" <> boardAcronym b <> "/ " <> boardName b

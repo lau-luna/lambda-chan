@@ -1,17 +1,11 @@
 module Domain.Post 
   ( Post(..)
   , PostContent(..)
-  , MediaAttachment(..)
   ) where
 
 import Data.Text (Text)
 import Data.Time (UTCTime)
 import Domain.Attachment
-
-data MediaAttachment
-  = ImageFile Image
-  | VideoFile Video
-  | GifFile Gif
 
 data PostContent
   = TextOnly Text

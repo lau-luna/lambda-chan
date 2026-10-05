@@ -59,7 +59,7 @@ header h1 {
   font-size: 3rem;
 }
 
-h1 {
+h1, .thread-preview .thread-title {
   color: var(--violet);
   font-family: "Ubuntu-B", sans-serif;
 }
@@ -130,17 +130,17 @@ code, pre, .mono {
   margin-bottom: 5%;
 }
 
-.board-box a, .footer-box-container a {
+.board-box a, .footer-box-container a, .board-name {
   color: var(--pink);
   font-size: 0.9rem;
 }
 
-.board-list a {
+.board-list a, .board-name {
   display: block;
   text-decoration: none;
 }
 
-.board-list a:hover {
+.board-list a:hover, .board-list a:hover, .board-name:hover {
   text-decoration: underline;
 }
 
@@ -150,14 +150,18 @@ footer hr {
 }
 
 .main-container {
-  border: 1px solid var(--violet--dark);
+  border: 1px solid var(--violet-dark);
+}
+
+.board-name {
+  margin: 1rem;
 }
 
 .popular-threads {
   padding: 4rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 8rem;
+  gap: 4rem;
 }
 
 .thread-preview {
@@ -169,5 +173,14 @@ footer hr {
 
 .thread-preview img {
   max-width: 100%;
-  border: 1px solid var(--violet--dark);
+}
+
+.thread-preview .thread-title {
+  margin: 0.5rem;
+  font-size: 1rem;
+}
+
+.thread-preview .thread-text {
+  margin: 0;
+  font-size: 0.9rem;
 }

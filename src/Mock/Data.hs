@@ -6,7 +6,6 @@ module Mock.Data
   ) where
 
 import qualified Domain.Attachment as Att
-import Domain.Boards (allBoards)
 import Domain.Post
 import Domain.Thread
 
@@ -20,10 +19,11 @@ mockTime2 = UTCTime (fromGregorian 2026 10 3) (secondsToDiffTime 43200)
 mockTime3 = UTCTime (fromGregorian 2026 10 4) (secondsToDiffTime 10800)
 
 -- Attachments Examples
-mockImage1, mockImage2, mockImage3 :: Att.Image
+mockImage1, mockImage2, mockImage3, mockImage4 :: Att.Image
 mockImage1 = Att.Image { Att.imagePath = "/mock-uploads/img/haskell-purescript.png" }
 mockImage2 = Att.Image { Att.imagePath = "/mock-uploads/img/opsec-chan.jpg" }
 mockImage3 = Att.Image { Att.imagePath = "/mock-uploads/img/rei-ayanami.jpg" }
+mockImage4 = Att.Image { Att.imagePath = "/mock-uploads/img/arch-linux-chan.webp" }
 
 mockGif :: Att.Gif
 mockGif = Att.Gif { Att.gifPath = "/mock-uploads/gif/reisen.gif" }
@@ -44,7 +44,7 @@ mockThreads =
       , threadBoardId = 7  -- /t/
       , threadTitle = "Which distro do you recommend?"
       , threadText = "Coming from Windows, want to switch over."
-      , threadAttachment = Att.NoAttachment
+      , threadAttachment = Att.ImageFile mockImage4 -- arch-linux-chan.webp
       , threadCreatedAt = mockTime2
       , threadBumpedAt = mockTime2
       }
@@ -106,7 +106,7 @@ mockPosts =
   , Post
       { postId = 5
       , postThreadId = 3
-      , postContent = TextAndAttachment "Scotty gang rise up" (ImageFile mockImage1)
+      , postContent = TextAndAttachment "Scotty gang rise up" (Att.ImageFile mockImage1)
       , postCreatedAt = mockTime3
       }
   , Post
@@ -118,7 +118,7 @@ mockPosts =
   , Post
       { postId = 7
       , postThreadId = 5
-      , postContent = AttachmentOnly (GifFile mockGif)
+      , postContent = AttachmentOnly (Att.GifFile mockGif)
       , postCreatedAt = mockTime3
       }
   ]

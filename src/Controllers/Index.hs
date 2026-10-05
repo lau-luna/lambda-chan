@@ -20,7 +20,7 @@ show = do
       nsfwBoards     = boardsByCategory NSFW allBoards
       popThreads = popularThreads mockThreads
       popThreadsWithBoardNames =
-        [(t, boardNameFor (threadBoardId t) allBoards) | t <- popThreads]
+        [(t, findBoard (threadBoardId t) allBoards) | t <- popThreads]
 
   html $ renderHtml $ indexTemplate
     generalBoards
