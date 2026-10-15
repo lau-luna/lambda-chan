@@ -1,6 +1,11 @@
 # lambda-chan
 
 ## Docker
+### With docker compose
+```bash
+docker compose up
+ ```  
+
 Bulding an image
 ```bash
 docker build -t lambda-chan:dev .
