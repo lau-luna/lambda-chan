@@ -3,9 +3,9 @@ FROM haskell:9.10 AS build
 
 WORKDIR src/
 
-COPY stack.yaml stak.yaml.lock *.cabal ./
+COPY stack.yaml stack.yaml.lock *.cabal ./
 # Build dependecies first, to take advantage of cache
-RUN stack build --only-dependecies
+RUN stack build --only-dependencies
 
 COPY . .
 RUN stack build
