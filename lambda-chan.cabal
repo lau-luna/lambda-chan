@@ -33,6 +33,7 @@ executable lambda-chan
                      , text
                      , blaze-html
                      , wai-middleware-static
+                     , wai-extra
   ghc-options:         -Wall
                        -Wcompat
                        -Widentities

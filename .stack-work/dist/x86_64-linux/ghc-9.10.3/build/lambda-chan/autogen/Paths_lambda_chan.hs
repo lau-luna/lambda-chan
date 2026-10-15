@@ -47,7 +47,7 @@ getBinDir, getLibDir, getDynLibDir, getDataDir, getLibexecDir, getSysconfDir :: 
 
 bindir, libdir, dynlibdir, datadir, libexecdir, sysconfdir :: FilePath
 bindir     = "/home/lau/Projects/side_projects/lambda-chan/.stack-work/install/x86_64-linux/d0228518769bf88a05560b1470ed1b3e4fa341bb802eec0201832d713e68c403/9.10.3/bin"
-libdir     = "/home/lau/Projects/side_projects/lambda-chan/.stack-work/install/x86_64-linux/d0228518769bf88a05560b1470ed1b3e4fa341bb802eec0201832d713e68c403/9.10.3/lib/x86_64-linux-ghc-9.10.3-415c/lambda-chan-0.1.0.0-5pbjpP9VgcD6SHFy4dTHEP-lambda-chan"
+libdir     = "/home/lau/Projects/side_projects/lambda-chan/.stack-work/install/x86_64-linux/d0228518769bf88a05560b1470ed1b3e4fa341bb802eec0201832d713e68c403/9.10.3/lib/x86_64-linux-ghc-9.10.3-415c/lambda-chan-0.1.0.0-14qk6GjM8O68DvQsiZLyvl-lambda-chan"
 dynlibdir  = "/home/lau/Projects/side_projects/lambda-chan/.stack-work/install/x86_64-linux/d0228518769bf88a05560b1470ed1b3e4fa341bb802eec0201832d713e68c403/9.10.3/lib/x86_64-linux-ghc-9.10.3-415c"
 datadir    = "/home/lau/Projects/side_projects/lambda-chan/.stack-work/install/x86_64-linux/d0228518769bf88a05560b1470ed1b3e4fa341bb802eec0201832d713e68c403/9.10.3/share/x86_64-linux-ghc-9.10.3-415c/lambda-chan-0.1.0.0"
 libexecdir = "/home/lau/Projects/side_projects/lambda-chan/.stack-work/install/x86_64-linux/d0228518769bf88a05560b1470ed1b3e4fa341bb802eec0201832d713e68c403/9.10.3/libexec/x86_64-linux-ghc-9.10.3-415c/lambda-chan-0.1.0.0"

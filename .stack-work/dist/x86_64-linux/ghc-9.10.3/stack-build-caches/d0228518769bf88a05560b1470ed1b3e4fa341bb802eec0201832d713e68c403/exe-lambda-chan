@@ -1,9 +1,9 @@
 /home/lau/Projects/side_projects/lambda-chan/CHANGELOG.md:
   hash: 951b32b2c5a3e61a0a4dab21c924c07fe8b883cf151e0159a90b136f4b4bdc3d
 /home/lau/Projects/side_projects/lambda-chan/README.md:
-  hash: 540a86cbb8861ed65713cb603cb9a5197a7596129304818c8acadb8c4aa5a53e
+  hash: 15b6f94b5c25f27fb9d244ee213162e61ddac160ce42e939e96bfb24cdfc65f4
 /home/lau/Projects/side_projects/lambda-chan/lambda-chan.cabal:
-  hash: cc8509b3917aa2183227638bd2b376989b6a6a19226d21a9e3dd9c7445c2073c
+  hash: 42df3b7eb533e8fd5331d0023019fa7cf2ebb35567a82dd2f51cfa4b389ff3a8
 /home/lau/Projects/side_projects/lambda-chan/src/Controllers/Index.hs:
   hash: dabbd7c393b4052b1cc61358918ed6e550e5b9e13ea82fdedfc32539f6e58409
 /home/lau/Projects/side_projects/lambda-chan/src/Domain/Attachment.hs:
@@ -17,7 +17,7 @@
 /home/lau/Projects/side_projects/lambda-chan/src/Domain/Thread.hs:
   hash: 3be368760cf894f3ac996c3456c16dea47a88d215bb596a6c01c2e684a555926
 /home/lau/Projects/side_projects/lambda-chan/src/Main.hs:
-  hash: 05af09055bf2e643ed986d0bd95651a97168165087727ec6c4423c387c07a814
+  hash: 836d64d87094cb926949d0ce946be7a6975b948b9f0ee92628580bb73dab730a
 /home/lau/Projects/side_projects/lambda-chan/src/Mock/Data.hs:
   hash: 9d9e4a43265de93a36e5bcc40d52433983ace8399c37e480c7c720d1808b3c23
 /home/lau/Projects/side_projects/lambda-chan/src/Views/IndexView.hs:

@@ -60,6 +60,16 @@
   (major1) == 1 && (major2) <  12 || \
   (major1) == 1 && (major2) == 12 && (minor) <= 2)
 #endif /* MIN_VERSION_time */
+/* package wai-extra-3.1.18 */
+#ifndef VERSION_wai_extra
+#define VERSION_wai_extra "3.1.18"
+#endif /* VERSION_wai_extra */
+#ifndef MIN_VERSION_wai_extra
+#define MIN_VERSION_wai_extra(major1,major2,minor) (\
+  (major1) <  3 || \
+  (major1) == 3 && (major2) <  1 || \
+  (major1) == 3 && (major2) == 1 && (minor) <= 18)
+#endif /* MIN_VERSION_wai_extra */
 /* package wai-middleware-static-0.9.4 */
 #ifndef VERSION_wai_middleware_static
 #define VERSION_wai_middleware_static "0.9.4"
@@ -163,7 +173,7 @@
 #endif /* MIN_TOOL_VERSION_strip */
 
 #ifndef CURRENT_COMPONENT_ID
-#define CURRENT_COMPONENT_ID "lambda-chan-0.1.0.0-5pbjpP9VgcD6SHFy4dTHEP-lambda-chan"
+#define CURRENT_COMPONENT_ID "lambda-chan-0.1.0.0-14qk6GjM8O68DvQsiZLyvl-lambda-chan"
 #endif /* CURRENT_COMPONENT_ID */
 #ifndef CURRENT_PACKAGE_VERSION
 #define CURRENT_PACKAGE_VERSION "0.1.0.0"

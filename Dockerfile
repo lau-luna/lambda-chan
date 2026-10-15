@@ -13,3 +13,6 @@ RUN stack build --copy-bins --local-bin-path /usr/local/bin
 EXPOSE 3000
 
 CMD ["lambda-chan"]
+
+
+# TODO: compress this image with a separate build
