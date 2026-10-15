@@ -20,6 +20,6 @@ version = Version [0,1,0,0] []
 synopsis :: String
 synopsis = ""
 copyright :: String
-copyright = "2026 Author name here"
+copyright = "2026 Lautaro Luna"
 homepage :: String
-homepage = "https://github.com/githubuser/lambda-chan#readme"
+homepage = "https://github.com/lau-luna/lambda-chan#readme"
