@@ -1,4 +1,5 @@
+.env
 .stack-work/
-build-log
+build.log
 uploads/*
 !uploads/.gitkeep
